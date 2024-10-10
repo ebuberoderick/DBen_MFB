@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text, Image, TextInput, FlatList } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Octicons from '@expo/vector-icons/Octicons';
@@ -7,6 +7,37 @@ import Entypo from '@expo/vector-icons/Entypo';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const index = () => {
+
+    const listOfItem = [
+        {
+            icon: "",
+            name: "",
+            description:"",
+            id:1
+        },
+
+        {
+            icon: "",
+            name: "",
+            description: "",
+            id:2
+        },
+
+        {
+            icon: "",
+            name: "",
+            description: "",
+            id:3
+        },
+
+        {
+            icon: "",
+            name: "",
+            description: "",
+            id:4
+        }
+    ];
+
     return (
         <View style={{ flex: 1, backgroundColor: "#fff", gap: 33, paddingTop: 50, paddingHorizontal: 20 }}>
             {/* hero section */}
@@ -48,27 +79,28 @@ const index = () => {
                 </View>
             </LinearGradient>
 
+
             {/* home cards */}
-            <View style={{ flex: 2, gap: 20, flexDirection: 'row' }}>
-                <View style={{ flexGrow: 1 }}>
-                    <View style={{ borderWidth: 1, borderRadius: 20, gap: 7, borderColor: "#f1f2f7", paddingVertical: 40, paddingHorizontal: 25 }}>
-                        <View style={{ borderWidth: 1, borderColor: "#E3E3E3", width: 50, height: 50, borderRadius: 99, justifyContent: 'center', alignItems: 'center' }}>
-                            <FontAwesome name="paper-plane" size={24} color="red" />
+
+            <FlatList
+                numColumns={2}
+                data={listOfItem}
+                scrollEnabled={false}
+                gap={4}
+                style={{}}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <View style={{ width: "49%", padding: 15 }}>
+                        <View style={{ borderWidth: 1, borderRadius: 20, gap: 7, borderColor: "#f1f2f7", paddingVertical: 40, paddingHorizontal: 25 }}>
+                            <View style={{ borderWidth: 1, borderColor: "#E3E3E3", width: 50, height: 50, borderRadius: 99, justifyContent: 'center', alignItems: 'center' }}>
+                                <FontAwesome name="paper-plane" size={24} color="red" />
+                            </View>
+                            <Text style={{ fontWeight: '800', fontSize: 20 }}>Send Money</Text>
+                            <Text style={{ color: "gray", fontSize: 10 }}>send to other account</Text>
                         </View>
-                        <Text style={{ fontWeight: '800', fontSize: 20 }}>Send Money</Text>
-                        <Text style={{ color: "gray", fontSize: 10 }}>send to other account</Text>
                     </View>
-                </View>
-                <View style={{ flexGrow: 1 }}>
-                    <View style={{ borderWidth: 1, borderRadius: 20, gap: 7, borderColor: "#f1f2f7", paddingVertical: 40, paddingHorizontal: 25 }}>
-                        <View style={{ borderWidth: 1, borderColor: "#E3E3E3", width: 50, height: 50, borderRadius: 99, justifyContent: 'center', alignItems: 'center' }}>
-                            <Feather name="thumbs-up" size={24} color="black" />
-                        </View>
-                        <Text style={{ fontWeight: '800', fontSize: 20 }}>Recive Money</Text>
-                        <Text style={{ color: "gray", fontSize: 10 }}>send to other account</Text>
-                    </View>
-                </View>
-            </View>
+                )}
+            />
         </View>
     )
 }
