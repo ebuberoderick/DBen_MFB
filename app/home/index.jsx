@@ -68,7 +68,7 @@ const index = () => {
 
             {/* balance section */}
 
-            <LinearGradient end={[1, .7]} colors={["#6186f8", "#10329b"]} style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "blue", paddingVertical: 50, paddingHorizontal: 30, borderRadius: 20 }}>
+            <LinearGradient end={[1, .7]} colors={["#6186f8", "#10329b"]} style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: "blue", paddingVertical: 70, paddingHorizontal: 30, borderRadius: 20 }}>
                 {/* <LinearGradient /> */}
                 <View style={{ flexGrow: 1, gap: 4 }}>
                     <Text style={{ color: "#fff" }}>Total Balance</Text>
@@ -86,8 +86,6 @@ const index = () => {
                 numColumns={2}
                 data={listOfItem}
                 scrollEnabled={false}
-                gap={4}
-                style={{}}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={{ width: "49%", padding: 15 }}>
