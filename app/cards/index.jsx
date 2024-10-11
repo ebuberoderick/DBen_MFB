@@ -4,7 +4,7 @@ import React from 'react'
 export default function Card() {
   return (
     <View className='flex-1 bg-red-100'>
-      
+      <Text>hhh</Text>
     </View>
   )
 }
