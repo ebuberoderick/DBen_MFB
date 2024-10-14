@@ -50,6 +50,11 @@ const index = () => {
 
       <Modal animationType="slide" visible={showAccountDetailsModal}>
         <View className="flex-1 items-center justify-center">
+          <View>
+            <Text>Account Name: Onyemzoro Ebube Roderick</Text>
+            <Text>Account Number: 1234567890</Text>
+            <Text>Bank: DBen MFB</Text>
+          </View>
           <TouchableOpacity onPress={() => updateAccountDetailsModal(false)}><Text >Close</Text></TouchableOpacity>
         </View>
       </Modal>
