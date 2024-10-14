@@ -119,7 +119,6 @@ const index = () => {
           paddingHorizontal: 30,
           borderRadius: 20,
         }}>
-        {/* <LinearGradient /> */}
         <View style={{ flexGrow: 1, gap: 4 }}>
           <Text style={{ color: "#fff" }}>Total Balance</Text>
           <Text style={{ color: "#fff", fontWeight: "800", fontSize: 35 }}>

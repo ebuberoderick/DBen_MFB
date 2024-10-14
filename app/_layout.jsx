@@ -8,7 +8,7 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const _layout = () => {
     return (
-        <Tabs screenOptions={{ headerShown: false }}>
+        <Tabs initialRouteName='/home' screenOptions={{ headerShown: false }}>
             <Tabs.Screen name='home' options={{
                 title:"Home",
                 tabBarIcon: () => <Feather name="home" size={24} />
