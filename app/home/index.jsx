@@ -1,11 +1,12 @@
-import { View, Text, Image, TextInput, FlatList } from "react-native";
-import React from "react";
+import { View, Text, Image, TextInput, FlatList, TouchableOpacity, Modal } from "react-native";
+import React, { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Octicons from "@expo/vector-icons/Octicons";
 import Entypo from "@expo/vector-icons/Entypo";
 import { LinearGradient } from "expo-linear-gradient";
 
 const index = () => {
+  const [showAccountDetailsModal,updateAccountDetailsModal] = useState(false)
   const listOfItem = [
     {
       icon: <Entypo name="paper-plane" size={24} color="red" />,
@@ -45,6 +46,13 @@ const index = () => {
         paddingTop: 50,
         paddingHorizontal: 20,
       }}>
+
+
+      <Modal animationType="slide" visible={showAccountDetailsModal}>
+
+      </Modal>
+
+
       {/* hero section */}
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <View
@@ -125,7 +133,8 @@ const index = () => {
             ${Number(4069746).toLocaleString("en-US")}
           </Text>
         </View>
-        <View
+        <TouchableOpacity
+        onPress={() => updateAccountDetailsModal(true)}
           style={{
             width: 50,
             borderRadius: 99,
@@ -135,7 +144,7 @@ const index = () => {
             alignItems: "center",
           }}>
           <Entypo name="plus" size={30} color="blue" />
-        </View>
+        </TouchableOpacity>
       </LinearGradient>
 
       {/* home cards */}
@@ -158,7 +167,7 @@ const index = () => {
                 shadowColor: "#e0dede",
                 shadowOpacity: 0.1,
                 elevation: 1,
-            
+
               }}>
               <View
                 style={{

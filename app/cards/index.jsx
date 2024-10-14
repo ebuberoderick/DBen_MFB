@@ -23,13 +23,13 @@ export default function Card() {
 
 
       <View className="h-64 bg-blue-700 rounded-2xl"></View>
-      <View>
+      <View className="gap-y-4">
         <View className="flex-row p-2 bg-gray-100 rounded-3xl">
-          <TouchableOpacity className={`w-1/2 absolute bg-white h-full m-2 transition-all duration-700 rounded-2xl ${activeTab !=="daily" && "right-0"}`}></TouchableOpacity>
-          <TouchableOpacity onPress={() => updateActiveTab("daily")} className="w-1/2"><Text className={`uppercase py-3 text-center text-xl ${activeTab === "daily" ? "text-blue-600" : "text-gray-400" }`}>Daily</Text></TouchableOpacity>
-          <TouchableOpacity onPress={() => updateActiveTab("monthly")} className="w-1/2"><Text className={`uppercase py-3 text-center text-xl ${activeTab === "monthly" ? "text-blue-600" : "text-gray-400" }`}>Monthly</Text></TouchableOpacity>
+          <TouchableOpacity className={`w-1/2 absolute bg-white h-full m-2 transition-all duration-700 rounded-2xl ${activeTab !== "daily" && "right-0"}`}></TouchableOpacity>
+          <TouchableOpacity onPress={() => updateActiveTab("daily")} className="w-1/2"><Text className={`uppercase py-3 text-center text-xl ${activeTab === "daily" ? "text-blue-600" : "text-gray-400"}`}>Daily</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => updateActiveTab("monthly")} className="w-1/2"><Text className={`uppercase py-3 text-center text-xl ${activeTab === "monthly" ? "text-blue-600" : "text-gray-400"}`}>Monthly</Text></TouchableOpacity>
         </View>
-        <View></View>
+        <View className={`h-96 ${activeTab === "daily" ? "bg-green-200" : "bg-blue-200"}`}></View>
       </View>
     </View>
   )
