@@ -6,7 +6,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { LinearGradient } from "expo-linear-gradient";
 
 const index = () => {
-  const [showAccountDetailsModal,updateAccountDetailsModal] = useState(false)
+  const [showAccountDetailsModal, updateAccountDetailsModal] = useState(false)
   const listOfItem = [
     {
       icon: <Entypo name="paper-plane" size={24} color="red" />,
@@ -49,7 +49,9 @@ const index = () => {
 
 
       <Modal animationType="slide" visible={showAccountDetailsModal}>
-
+        <View className="flex-1 items-center justify-center">
+          <TouchableOpacity onPress={() => updateAccountDetailsModal(false)}><Text >Close</Text></TouchableOpacity>
+        </View>
       </Modal>
 
 
@@ -134,7 +136,7 @@ const index = () => {
           </Text>
         </View>
         <TouchableOpacity
-        onPress={() => updateAccountDetailsModal(true)}
+          onPress={() => updateAccountDetailsModal(true)}
           style={{
             width: 50,
             borderRadius: 99,
