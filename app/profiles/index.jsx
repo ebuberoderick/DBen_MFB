@@ -1,26 +1,36 @@
 import { View, Image, Text, FlatList } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import AntDesign from '@expo/vector-icons/AntDesign';
-import Fontisto from '@expo/vector-icons/Fontisto';
-import Feather from '@expo/vector-icons/Feather';
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import Feather from "@expo/vector-icons/Feather";
 
 export default function Profile() {
   profile_code = [
     {
-      name: "QR Code",
-      icon: <AntDesign name="qrcode" size={24} color="black" />,
-      color: "",
+      name: "QR Code ",
+      icon: <AntDesign name="qrcode" size={24} color="#4c00b0" />,
+      color: "#4c00b0",
     },
     {
-      name: "Email",
-      icon: <Fontisto name="email" size={24} color="black" />,
-      color: "",
+      name: "Email       ",
+      icon: <Fontisto name="email" size={24} color="#169496"/>,
+      color: "#169496",
     },
     {
       name: "Password",
-      icon: <Feather name="lock" size={24} color="black" />,
-      color: "",
+      icon: (
+        <Feather
+          name="lock"
+          size={24}
+          color="orange"
+          // backgroundColor="orange"
+          // width={35}
+          // height={35}
+          // borderRadius={10}
+        />
+      ),
+      color: "orange",
     },
   ];
 
@@ -56,6 +66,7 @@ export default function Profile() {
           </Text>
         </View>
       </View>
+      
 
       <View
         style={{
@@ -66,40 +77,55 @@ export default function Profile() {
           borderRadius: 20,
         }}>
         <View style={{ flexDirection: "row", paddingVertical: 10 }}>
-          <Text style={{ color: "white",marginLeft:20 }}>****6806</Text>
+          <Text style={{ color: "white", marginLeft: 20 }}>****6806</Text>
           <Image
             source={{
               uri: "https://img.icons8.com/?size=160&id=pRrkw6sJDhF_&format=png",
             }}
-            style={{ height: 50, width: 50, marginLeft:170}}
+            style={{ height: 50, width: 50, marginLeft: 170 }}
           />
         </View>
-        <View>
-        
-        <Image
+        <View style={{ flexDirection: "row", paddingVertical: 10 }}>
+        <View style={{marginLeft:15, marginTop:10}}>
+        <Text style={{ color: "white", fontSize:11, fontFamily:'400'}}>Balance</Text>
+        <Text style={{ color: "#fff", fontSize:20, fontFamily:'900'}}>
+            ${Number(4069746).toLocaleString("en-US")}
+          </Text>
+        </View>
+    
+          <Image
             source={{
-              uri: "https://static-00.iconduck.com/assets.00/verve-icon-2048x709-8iunu5yi.png",
+              uri: "https://www.pngplay.com/wp-content/uploads/12/Visa-Card-Logo-PNG-Photo-Clip-Art-Image.png",
             }}
-            height={70}
-          width={100}
+            style={{height:40, width:150, marginLeft:50, marginTop:10}}
           />
         </View>
       </View>
 
-      <FlatList 
-data={profile_code}
-renderItem={({item}) =>(
-<View style={{flexDirection:'row', paddingHorizontal:20, paddingVertical:20}}>
-<View style={{flexDirection:'row'}}>
-{item.icon}
-<Text>{item.name}</Text>
-</View>
-  <AntDesign name="right" size={24} color="black" />
-</View>
-)}
+      <FlatList
+        data={profile_code}
+        renderItem={({ item }) => (
+          <View
+            style={{
+              flexDirection: "row",
+              paddingHorizontal: 20,
+              paddingVertical: 20,
+              backgroundColor:'white',
+              marginTop:9,
+              gap:7,
+              borderRadius:10,
+              width:330,
+              marginLeft:14
 
-/> 
-
+            }}>
+            <View style={{ flexDirection: "row" }}>
+            <View style={{backgroundColor:item.color, height:40, width:40, borderRadius:10, justifyContent:'center',alignItems:'center', opacity:0.3}}>{item.icon}</View>
+              <Text style={{marginLeft:5, justifyContent:'center',alignItems:'center',marginTop:10}}>{item.name}</Text>
+            </View>
+            <AntDesign name="right" size={24} color="black" marginLeft={160} />
+          </View>
+        )}
+      />
     </View>
   );
 }
