@@ -193,7 +193,7 @@ const index = () => {
           </View>
         )}
         renderSectionHeader={({ section: { title } }) => (
-          <Text>{title}</Text>
+          <Text className="font-bold text-2xl">{title}</Text>
         )}
       />
 
