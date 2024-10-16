@@ -159,6 +159,7 @@ const index = () => {
       <FlatList
         numColumns={2}
         data={listOfItem}
+        ItemSeparatorComponent={() => <Text>hi</Text>}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={{ width: "49%", padding: 5 }}>
