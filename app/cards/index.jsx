@@ -48,13 +48,15 @@ export default function Card() {
       </View>
 
       <View className="h-56 bg-blue-700 rounded-3xl">
-        <View style={{ flexDirection: "row" }}>
-          <Image
-            source={{
-              uri: "https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png",
-            }}
-            className={"h-9 w-11 ml-4 mt-4"}
-          />
+        <View style={{ flexDirection: "row", paddingRight:16 }}>
+          <View className="flex-grow">
+            <Image
+              source={{
+                uri: "https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_circles_92px_2x.png",
+              }}
+              className={"h-9 w-11 ml-4 mt-4"}
+            />
+          </View>
 
           <Text
             style={{
@@ -68,33 +70,31 @@ export default function Card() {
           </Text>
         </View>
         <View>
-          <Text style={{color:'#fff', fontSize:14, fontWeight:'400', paddingVertical:5, marginLeft:20, marginTop:20}}>Card Number</Text>
-          <Text style={{color:'#fff', fontSize:20, fontWeight:'700', marginLeft:20}}>3829 4820 4629 5025</Text>
+          <Text style={{ color: '#fff', fontSize: 14, fontWeight: '400', paddingVertical: 5, marginLeft: 20, marginTop: 20 }}>Card Number</Text>
+          <Text style={{ color: '#fff', fontSize: 20, fontWeight: '700', marginLeft: 20 }}>3829 4820 4629 5025</Text>
         </View>
-        <View style={{flexDirection:'row', gap:20}}>
-        <View>
-          <Text style={{color:'#fff', fontSize:12, fontWeight:'300', paddingVertical:5, marginLeft:20, marginTop:20}}>Account Name</Text>
-          <Text style={{color:'#fff', fontSize:18, fontWeight:'500', marginLeft:20}}>Anita Rose</Text>
-        </View>
-        <View style={{marginLeft:40}}>
-          <Text style={{color:'#fff', fontSize:12, fontWeight:'300', paddingVertical:5, marginLeft:20, marginTop:20}}>CCS</Text>
-          <Text style={{color:'#fff', fontSize:18, fontWeight:'500', marginLeft:20}}>05/22</Text>
-        </View>
+        <View style={{ flexDirection: 'row', gap: 20 }}>
+          <View>
+            <Text style={{ color: '#fff', fontSize: 12, fontWeight: '300', paddingVertical: 5, marginLeft: 20, marginTop: 20 }}>Account Name</Text>
+            <Text style={{ color: '#fff', fontSize: 18, fontWeight: '500', marginLeft: 20 }}>Anita Rose</Text>
+          </View>
+          <View style={{ marginLeft: 40 }}>
+            <Text style={{ color: '#fff', fontSize: 12, fontWeight: '300', paddingVertical: 5, marginLeft: 20, marginTop: 20 }}>CCS</Text>
+            <Text style={{ color: '#fff', fontSize: 18, fontWeight: '500', marginLeft: 20 }}>05/22</Text>
+          </View>
         </View>
       </View>
       <View className="gap-y-2">
         <View className="flex-row p-2 bg-gray-100 rounded-3xl">
           <TouchableOpacity
-            className={`w-1/2 absolute bg-white h-full m-2 transition-all duration-700 rounded-2xl ${
-              activeTab !== "daily" && "right-0"
-            }`}></TouchableOpacity>
+            className={`w-1/2 absolute bg-white h-full m-2 transition-all duration-700 rounded-2xl ${activeTab !== "daily" && "right-0"
+              }`}></TouchableOpacity>
           <TouchableOpacity
             onPress={() => updateActiveTab("daily")}
             className="w-1/2">
             <Text
-              className={`uppercase py-3 text-center text-x ${
-                activeTab === "daily" ? "text-blue-400" : "text-gray-400"
-              }`}>
+              className={`uppercase py-3 text-center text-x ${activeTab === "daily" ? "text-blue-400" : "text-gray-400"
+                }`}>
               Daily
             </Text>
           </TouchableOpacity>
@@ -102,9 +102,8 @@ export default function Card() {
             onPress={() => updateActiveTab("monthly")}
             className="w-1/2">
             <Text
-              className={`uppercase py-3 text-center text-x ${
-                activeTab === "monthly" ? "text-blue-400" : "text-gray-400"
-              }`}>
+              className={`uppercase py-3 text-center text-x ${activeTab === "monthly" ? "text-blue-400" : "text-gray-400"
+                }`}>
               Monthly
             </Text>
           </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, FlatList, TouchableOpacity, Modal } from "react-native";
+import { View, Text, Image, TextInput, FlatList, TouchableOpacity, Modal, SectionList } from "react-native";
 import React, { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Octicons from "@expo/vector-icons/Octicons";
@@ -7,6 +7,29 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const index = () => {
   const [showAccountDetailsModal, updateAccountDetailsModal] = useState(false)
+
+
+  const DATA = [
+    {
+      title: 'A',
+      data: ['Ann', 'Anita', 'Aloy'],
+    },
+    {
+      title: 'B',
+      data: ['Ben', 'Bill', 'Blessing'],
+    },
+    {
+      title: 'C',
+      data: ['charles', 'Coke', 'Chidi',"Chioma"],
+    },
+    {
+      title: 'D',
+      data: ['Denison', 'Daniel',"Dave"],
+    },
+  ];
+
+
+
   const listOfItem = [
     {
       icon: <Entypo name="paper-plane" size={24} color="red" />,
@@ -156,10 +179,32 @@ const index = () => {
 
       {/* home cards */}
 
+      <SectionList
+        sections={DATA}
+        // ItemSeparatorComponent={() => (
+        //   <View>
+        //     <Image height={300} width={300} source={{ uri: "https://cdn.britannica.com/42/91642-050-332E5C66/Keukenhof-Gardens-Lisse-Netherlands.jpg" }} />
+        //   </View>
+        // )}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ item }) => (
+          <View className="pl-4">
+            <Text className="text-lg py-3">{item}</Text>
+          </View>
+        )}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text>{title}</Text>
+        )}
+      />
+
       <FlatList
-        numColumns={2}
+        numColumns={1}
         data={listOfItem}
-        ItemSeparatorComponent={() => <Text>hi</Text>}
+        ItemSeparatorComponent={() => (
+          <View>
+            <Image height={300} width={300} source={{ uri: "https://cdn.britannica.com/42/91642-050-332E5C66/Keukenhof-Gardens-Lisse-Netherlands.jpg" }} />
+          </View>
+        )}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={{ width: "49%", padding: 5 }}>
