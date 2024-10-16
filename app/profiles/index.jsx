@@ -14,7 +14,7 @@ export default function Profile() {
     },
     {
       name: "Email       ",
-      icon: <Fontisto name="email" size={24} color="#169496"/>,
+      icon: <Fontisto name="email" size={24} color="#169496" />,
       color: "#169496",
     },
     {
@@ -24,10 +24,10 @@ export default function Profile() {
           name="lock"
           size={24}
           color="orange"
-          // backgroundColor="orange"
-          // width={35}
-          // height={35}
-          // borderRadius={10}
+        // backgroundColor="orange"
+        // width={35}
+        // height={35}
+        // borderRadius={10}
         />
       ),
       color: "orange",
@@ -66,38 +66,42 @@ export default function Profile() {
           </Text>
         </View>
       </View>
-      
+
 
       <View
         style={{
           backgroundColor: "#4c00b0",
-          height: 150,
-          width: 320,
-          alignSelf: "center",
+          height: 220,
+          width: "93%",
+          alignSelf:"center",
+          justifyContent:"space-between",
           borderRadius: 20,
+          paddingBottom:20
         }}>
-        <View style={{ flexDirection: "row", paddingVertical: 10 }}>
-          <Text style={{ color: "white", marginLeft: 20 }}>****6806</Text>
+        <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 20, paddingVertical: 10 }}>
+          <View className="flex-grow">
+            <Text style={{ color: "white" }}>****6806</Text>
+          </View>
           <Image
             source={{
               uri: "https://img.icons8.com/?size=160&id=pRrkw6sJDhF_&format=png",
             }}
-            style={{ height: 50, width: 50, marginLeft: 170 }}
+            style={{ height: 50, width: 50 }}
           />
         </View>
-        <View style={{ flexDirection: "row", paddingVertical: 10 }}>
-        <View style={{marginLeft:15, marginTop:10}}>
-        <Text style={{ color: "white", fontSize:11, fontFamily:'400'}}>Balance</Text>
-        <Text style={{ color: "#fff", fontSize:20, fontFamily:'900'}}>
-            ${Number(4069746).toLocaleString("en-US")}
-          </Text>
-        </View>
-    
+        <View style={{ flexDirection: "row", paddingHorizontal:20, paddingVertical: 10 }}>
+          <View style={{ marginLeft: 15, flexGrow:1, marginTop: 10 }}>
+            <Text style={{ color: "white", fontSize: 11, fontFamily: '400' }}>Balance</Text>
+            <Text style={{ color: "#fff", fontSize: 20, fontFamily: '900' }}>
+              ${Number(4069746).toLocaleString("en-US")}
+            </Text>
+          </View>
+
           <Image
             source={{
               uri: "https://www.pngplay.com/wp-content/uploads/12/Visa-Card-Logo-PNG-Photo-Clip-Art-Image.png",
             }}
-            style={{height:40, width:150, marginLeft:50, marginTop:10}}
+            style={{ height: 40, width: 150, marginTop: 10 }}
           />
         </View>
       </View>
@@ -110,19 +114,19 @@ export default function Profile() {
               flexDirection: "row",
               paddingHorizontal: 20,
               paddingVertical: 20,
-              backgroundColor:'white',
-              marginTop:9,
-              gap:7,
-              borderRadius:10,
-              width:330,
-              marginLeft:14
-
+              backgroundColor: 'white',
+              marginTop: 9,
+              gap: 7,
+              borderRadius: 10,
+              width: "93%",
+              marginLeft: 14,
+              alignItems: "center"
             }}>
-            <View style={{ flexDirection: "row" }}>
-            <View style={{backgroundColor:item.color, height:40, width:40, borderRadius:10, justifyContent:'center',alignItems:'center', opacity:0.3}}>{item.icon}</View>
-              <Text style={{marginLeft:5, justifyContent:'center',alignItems:'center',marginTop:10}}>{item.name}</Text>
+            <View style={{ flexDirection: "row", flexGrow: 1 }}>
+              <View style={{ backgroundColor: item.color, height: 40, width: 40, borderRadius: 10, justifyContent: 'center', alignItems: 'center', opacity: 0.3 }}>{item.icon}</View>
+              <Text style={{ marginLeft: 5, justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>{item.name}</Text>
             </View>
-            <AntDesign name="right" size={24} color="black" marginLeft={160} />
+            <AntDesign name="right" size={24} color="black" />
           </View>
         )}
       />
